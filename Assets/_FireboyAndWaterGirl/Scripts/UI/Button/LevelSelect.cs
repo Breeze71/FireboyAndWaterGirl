@@ -59,22 +59,23 @@ public class LevelSelect : MonoBehaviour, IPointerClickHandler
             ButtonImage.color = Color.gray;
             Newtext.SetActive(false);
         }
+        else if (PlayerPrefs.GetString(gameObject.name) == "Successed")
+        {
+           foreach (GameObject t in Highlights)
+            {
+                t.SetActive(true);
+            }
+            ButtonImage.color = Color.green;
+        }
         else if (PlayerPrefs.GetString(Father)=="Successed" && PlayerPrefs.GetString(gameObject.name,"-1") == "-1")
         {
             Newtext.SetActive(true);
         }
         else if (PlayerPrefs.GetString(Father) == "Successed" && PlayerPrefs.GetString(gameObject.name, "-1") == "Tried")
         {
+
             Newtext.SetActive(false);
-        }
-        else if (PlayerPrefs.GetString(gameObject.name) == "Successed")
-        {
-            Newtext.SetActive(false);
-            foreach (GameObject t in Highlights)
-            {
-                t.SetActive(true);
-            }
-            ButtonImage.color = Color.green;
+            
         }
     }
     /// <summary>
@@ -87,7 +88,7 @@ public class LevelSelect : MonoBehaviour, IPointerClickHandler
             SceneManager.LoadScene(gameObject.name);
         }
         //when player try to open clocked level,display Tip
-        else if (PlayerPrefs.GetString(gameObject.name,"-1") == "Successed")
+        else
         {
             TipText.SetActive(true);
             StartCoroutine(CloseTip());
