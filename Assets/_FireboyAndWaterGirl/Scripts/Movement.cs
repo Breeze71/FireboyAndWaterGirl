@@ -14,13 +14,16 @@ public enum FaceDirection
     Right = 1,
 }
 
+/// <summary>
+/// Character Movement
+/// </summary>
 public class Movement : MonoBehaviour
 {
     [SerializeField] private PlayerInputSO inputSO;
     [SerializeField] private GameObject groundCheck;
     [SerializeField] private Animator anim;
     
-    private Rigidbody2D rb;
+    public Rigidbody2D rb { get; private set;}
     private int xInput;
     private bool isJumpKeyDown;
     private bool canMove;
