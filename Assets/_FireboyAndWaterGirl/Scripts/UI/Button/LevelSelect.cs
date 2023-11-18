@@ -82,7 +82,7 @@ public class LevelSelect : MonoBehaviour, IPointerClickHandler
     /// </summary>
     public void PressSelection()
     {
-        if (PlayerPrefs.GetString(Father, "unlocked") != "Successed")
+        if (PlayerPrefs.GetString(Father, "unlocked") == "Successed")
         {
             SceneManager.LoadScene(gameObject.name);
         }
