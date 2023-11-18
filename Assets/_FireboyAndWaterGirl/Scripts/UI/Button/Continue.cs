@@ -8,7 +8,6 @@ public class Continue : MonoBehaviour
    public GameObject ContinueButton;
     private void Awake()
     {
-        ContinueButton = GetComponent<GameObject>();
         ContinueButton.SetActive(false);
     }
     public void SetActice()
