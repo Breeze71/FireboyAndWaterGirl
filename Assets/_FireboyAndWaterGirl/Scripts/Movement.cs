@@ -4,26 +4,31 @@ using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
+/// <summary>
+/// Facing Direction
+/// </summary>
+public enum FaceDirection
+{
+    None = 0,
+    Left = -1,
+    Right = 1,
+}
+
+/// <summary>
+/// Character Movement
+/// </summary>
 public class Movement : MonoBehaviour
 {
     [SerializeField] private PlayerInputSO inputSO;
     [SerializeField] private GameObject groundCheck;
+    [SerializeField] private Animator anim;
     
-
-    private Rigidbody2D rb;
+    public Rigidbody2D rb { get; private set;}
     private int xInput;
     private bool isJumpKeyDown;
-    private int facingDirection;
-
-    /// <summary>
-    /// 暫停或死亡時 = false
-    /// </summary>
     private bool canMove;
 
-    /// <summary>
-    /// anim
-    /// </summary>
-    [SerializeField] private Animator anim;
+    private FaceDirection facingDirection;
 
 
     #region Unity
@@ -34,7 +39,7 @@ public class Movement : MonoBehaviour
     private void Start() 
     {
         canMove = true;
-        facingDirection = 1;
+        facingDirection = FaceDirection.None;
     }
     private void Update() 
     {
@@ -82,7 +87,7 @@ public class Movement : MonoBehaviour
     #region Facing Diretion
     private void CheckFlip()
     {
-        if(xInput != 0 && xInput != facingDirection)
+        if(xInput != 0 && xInput != (int)facingDirection)
         {
             Flip();
         }
@@ -90,13 +95,20 @@ public class Movement : MonoBehaviour
 
     private void Flip()
     {
-        facingDirection *= -1;
+        if(facingDirection.Equals(FaceDirection.Left))
+        {
+            facingDirection = FaceDirection.Right;
+        }
+        else
+        {
+            facingDirection = FaceDirection.Left;
+        }
 
         transform.Rotate(0f , 180f , 0f);        
     }
     #endregion
 
-    #region 傳遞給 CharacterAnimtor 的 Interface
+    #region 传递出的 Interface
     public bool IsWalking()
     {
         return xInput != 0;
@@ -105,8 +117,25 @@ public class Movement : MonoBehaviour
     {
         return rb.velocity.y;
     }
+
+    /// <summary>
+    /// 停止玩家移动
+    /// </summary>
+    public void DisableMovement()
+    {
+        canMove = false;
+    }
+    /// <summary>
+    /// 启用玩家移动
+    /// </summary>
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
     #endregion
     
+
+
     /// <summary>
     /// Ground Check
     /// </summary>
@@ -115,3 +144,5 @@ public class Movement : MonoBehaviour
         return groundCheck.GetComponent<ICheck>().Check();
     }
 }
+
+
