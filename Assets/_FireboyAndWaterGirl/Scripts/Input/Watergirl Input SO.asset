@@ -17,4 +17,4 @@ MonoBehaviour:
   JumpKey: 119
   AccSpeed: 2
   MaxMoveSpeed: 5
-  JumpForce: 8
+  JumpForce: 6
