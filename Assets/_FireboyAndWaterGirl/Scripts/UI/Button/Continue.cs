@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Continue : MonoBehaviour
 {
-   public GameObject ContinueButton;
+    public GameObject ContinueButton;
     private void Awake()
     {
+        #region register in GameEventManager
+        GameEventManager.Instance.playerEvent.OnPlayerDead += SetActice;
+        GameEventManager.Instance.playerEvent.OnPlayerDead += Dead;
+        GameEventManager.Instance.playerEvent.OnPlayerWin += SetActice;
+        GameEventManager.Instance.playerEvent.OnPlayerWin += Successed;
+        #endregion
+
         ContinueButton.SetActive(false);
     }
     public void SetActice()
@@ -28,4 +35,5 @@ public class Continue : MonoBehaviour
         PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "Successed");
         PlayerPrefs.Save();
     }
+
 }

@@ -32,4 +32,10 @@ public class PlayerEvent
     }
 
     public event Action OnPlayerWin;
+    #region Kaofish interface to _win
+    //public int CurrententerDoor()
+    //{
+    //    return currentEnterdoor;
+    //}
+    #endregion
 }
