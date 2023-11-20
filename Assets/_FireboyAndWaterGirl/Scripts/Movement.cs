@@ -40,7 +40,12 @@ public class Movement : MonoBehaviour
     {
         canMove = true;
         facingDirection = FaceDirection.None;
+
+        GameEventManager.Instance.playerEvent.OnPlayerDead += PlayerEvent_PlayerDeadEvent;
+        GameEventManager.Instance.playerEvent.OnPlayerResume += PlayerEvent_PlayerResumeEvent;
+        GameEventManager.Instance.playerEvent.OnPlayerOpenMenu += PlayerEvent_OnPlayerOpenMenu;
     }
+
     private void Update() 
     {
         if(!canMove)
@@ -55,6 +60,26 @@ public class Movement : MonoBehaviour
         Jump();
 
         CheckFlip();
+    }
+    private void OnDestroy() 
+    {
+        GameEventManager.Instance.playerEvent.OnPlayerDead -= PlayerEvent_PlayerDeadEvent;   
+    }
+    #endregion
+
+    #region Event
+    private void PlayerEvent_PlayerDeadEvent()
+    {
+        canMove = false;
+    }
+    private void PlayerEvent_OnPlayerOpenMenu()
+    {
+        canMove = false;
+    }
+
+    private void PlayerEvent_PlayerResumeEvent()
+    {
+        canMove = true;
     }
     #endregion
 
@@ -134,7 +159,6 @@ public class Movement : MonoBehaviour
     }
     #endregion
     
-
 
     /// <summary>
     /// Ground Check
