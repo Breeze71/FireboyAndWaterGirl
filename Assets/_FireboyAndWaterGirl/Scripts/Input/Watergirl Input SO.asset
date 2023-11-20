@@ -16,5 +16,7 @@ MonoBehaviour:
   RightKey: 100
   JumpKey: 119
   AccSpeed: 2
-  MaxMoveSpeed: 5
-  JumpForce: 6
+  MaxMoveSpeed: 10
+  JumpForce: 9
+  fallMutiplier: 0.45
+  lowJumpMutiplier: 3

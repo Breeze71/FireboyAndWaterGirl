@@ -12,9 +12,15 @@ public class PlayerInputSO : ScriptableObject
     public KeyCode RightKey;
     public KeyCode JumpKey;
 
+
+    [Header("Walk")]
     public float AccSpeed;
     public float MaxMoveSpeed;
+
+    [Header("Jump")]
     public float JumpForce;    
+    public float fallMutiplier = 2.5f;
+    public float lowJumpMutiplier = 2f;
 
     #region Player Input
     /// <summary>

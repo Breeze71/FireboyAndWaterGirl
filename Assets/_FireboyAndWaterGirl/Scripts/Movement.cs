@@ -58,6 +58,7 @@ public class Movement : MonoBehaviour
 
         Walk();
         Jump();
+        BetterJump();
 
         CheckFlip();
     }
@@ -105,6 +106,13 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.velocity += Vector2.up * inputSO.JumpForce;
+        }
+    }
+    private void BetterJump()
+    {
+        if(rb.velocity.y > 0)
+        {
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (inputSO.lowJumpMutiplier - 1) * Time.deltaTime;
         }
     }
     #endregion

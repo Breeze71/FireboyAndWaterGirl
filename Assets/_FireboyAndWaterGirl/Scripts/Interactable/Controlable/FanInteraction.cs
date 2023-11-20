@@ -63,7 +63,7 @@ public class FanInteraction : InteractableBase, IControlable
     {   
         foreach(Movement _movement in movementList)
         {
-            _movement.rb.AddForce(fanForce * Vector2.up * Time.deltaTime, ForceMode2D.Impulse);
+            _movement.rb.AddForce(fanForce * Vector2.up, ForceMode2D.Force);
         }
     }
 
@@ -75,7 +75,8 @@ public class FanInteraction : InteractableBase, IControlable
     }
     public override void ExitTrigger(Collider2D _other)
     {
-
+        Movement _player = _other.GetComponent<Movement>();
+        movementList.Remove(_player);        
     }
     #endregion
 }
