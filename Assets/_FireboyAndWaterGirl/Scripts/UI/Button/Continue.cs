@@ -28,7 +28,10 @@ public class Continue : MonoBehaviour
     }
     public void Dead()
     {
-        PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "Tried");
+        if (PlayerPrefs.GetString(SceneManager.GetActiveScene().name) != "Successed")
+        {
+            PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "Tried");
+        }
         PlayerPrefs.Save();
     }
     public void Successed()

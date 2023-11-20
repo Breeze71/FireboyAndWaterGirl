@@ -842,8 +842,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9104553090900115267, guid: bc7b5ecd54c87a24eb34c88fccaef611, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2867295
+      objectReference: {fileID: 0}
+    - target: {fileID: 9104553090900115267, guid: bc7b5ecd54c87a24eb34c88fccaef611, type: 3}
       propertyPath: m_Size.y
       value: 0.16031909
+      objectReference: {fileID: 0}
+    - target: {fileID: 9104553090900115267, guid: bc7b5ecd54c87a24eb34c88fccaef611, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.047421157
       objectReference: {fileID: 0}
     - target: {fileID: 9104553090900115267, guid: bc7b5ecd54c87a24eb34c88fccaef611, type: 3}
       propertyPath: m_Offset.y
@@ -3094,8 +3102,16 @@ PrefabInstance:
       value: WaterPool
       objectReference: {fileID: 0}
     - target: {fileID: 3920118806696955180, guid: 863b3a37bfe84d94cab655d917a9f0f9, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2119358
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920118806696955180, guid: 863b3a37bfe84d94cab655d917a9f0f9, type: 3}
       propertyPath: m_Size.y
       value: 0.21989489
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920118806696955180, guid: 863b3a37bfe84d94cab655d917a9f0f9, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.06125796
       objectReference: {fileID: 0}
     - target: {fileID: 3920118806696955180, guid: 863b3a37bfe84d94cab655d917a9f0f9, type: 3}
       propertyPath: m_Offset.y
@@ -3394,8 +3410,16 @@ PrefabInstance:
       value: PoisonPool
       objectReference: {fileID: 0}
     - target: {fileID: 7669401105654086737, guid: dcd1214e3bb52ab41ad6517c639e218c, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2782445
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669401105654086737, guid: dcd1214e3bb52ab41ad6517c639e218c, type: 3}
       propertyPath: m_Size.y
       value: 0.20296955
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669401105654086737, guid: dcd1214e3bb52ab41ad6517c639e218c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.06501603
       objectReference: {fileID: 0}
     - target: {fileID: 7669401105654086737, guid: dcd1214e3bb52ab41ad6517c639e218c, type: 3}
       propertyPath: m_Offset.y
