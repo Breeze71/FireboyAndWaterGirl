@@ -23,6 +23,7 @@ public class Continue : MonoBehaviour
     }
     public void ContinueTo0()
     {
+        Debug.Log("---");
         SceneManager.LoadScene("Lv0");
     }
     public void Dead()
