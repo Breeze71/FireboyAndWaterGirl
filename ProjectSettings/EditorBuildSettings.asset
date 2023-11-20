@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_FireboyAndWaterGirl/Scenes/Scene/Lv1.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/_FireboyAndWaterGirl/Scenes/Scene/StartScene.unity
     guid: 52d81a6e7544b304093eb366e2edd42b
   - enabled: 1
@@ -16,7 +13,10 @@ EditorBuildSettings:
     guid: 0a35e696777c99c45854baffd269b160
   - enabled: 1
     path: Assets/_FireboyAndWaterGirl/Scenes/Scene/Lv1.unity
-    guid: 8bc9da1a357c44a4c965b9ec457349f2
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/_FireboyAndWaterGirl/Scenes/Scene/Lv1.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/_FireboyAndWaterGirl/Scenes/Scene/Lv2.unity
     guid: d4aed03d686aa0e4c869b0510c293322
